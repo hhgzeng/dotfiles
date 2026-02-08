@@ -1,0 +1,5 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR __fish_initialized:4300
+SETUVAR fish_greeting:\x1d
+SETUVAR fish_user_paths:/Users/jingzeng/\x2eantigravity/antigravity/bin\x1e/opt/homebrew/sbin\x1e/Users/jingzeng/\x2elocal/bin\x1e/opt/homebrew/opt/llvm/bin\x1e/opt/homebrew/opt/node/bin\x1e/opt/homebrew/bin

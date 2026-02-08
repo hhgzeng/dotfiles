@@ -1,0 +1,73 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /Users/jingzeng/Library/Application Support/com.mitchellh.ghostty/config
+#
+# The template does not set any default options, since Ghostty ships 
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+
+command = /opt/homebrew/bin/fish
+
+# 字体设置
+font-family = JetBrainsMono Nerd Font Mono
+font-style = medium
+font-size = 14
+
+# 窗口设置
+# 窗口尺寸（以字符为单位）
+window-width = 120
+window-height = 38
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+window-decoration = auto
+
+# 主题
+theme = tokyonight
+
+# 光标设置
+cursor-style = block
+cursor-style-blink = false
+mouse-hide-while-typing = true
+
+# 滚动设置
+# scrollback-limit = 2000
+
+# Shell 集成
+shell-integration = none
+shell-integration-features = no-cursor
+
+# 自定义着色器
+custom-shader = ~/.config/ghostty/shaders/cursor_blaze.glsl
+
+# 其他
+macos-titlebar-style = transparent
+macos-option-as-alt = true
+confirm-close-surface = false
+quit-after-last-window-closed = true
+initial-window = true
+
+# 快捷键设置
+# Undo/Redo（按官方语法：Zig 字符串转义）
+keybind = cmd+z=text:\x1f
+
+# 删除/剪切
+keybind = cmd+backspace=text:\x15
+keybind = alt+backspace=text:\x17
+keybind = cmd+delete=text:\x0b
+keybind = alt+delete=esc:d
+
+# 光标移动
+keybind = cmd+left=text:\x01
+keybind = cmd+right=text:\x05
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
