@@ -24,14 +24,6 @@ set -gx EDITOR nvim
 # 禁用 Homebrew 自动更新
 set -gx HOMEBREW_NO_AUTO_UPDATE 1
 
-# MYSQL 连接
-set -x MYSQL_DSN "mysql+pymysql://root:040723@localhost:3306/toolmind"
-
-# ModelScope API Configuration
-set -x MODELSCOPE_API_KEY "ms-7182b198-97c7-4223-8554-92e4aa3c5dd4"
-set -x MODELSCOPE_API_BASE "https://api-inference.modelscope.cn/v1"
-set -x MODELSCOPE_MODEL "deepseek-ai/DeepSeek-V3.2"
-
 # -------------------------------------------------------------------
 # Conda
 # -------------------------------------------------------------------
@@ -134,3 +126,6 @@ source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
 # Added by Antigravity
 fish_add_path /Users/jingzeng/.antigravity/antigravity/bin
+
+# OpenClaw Completion
+source "/Users/jingzeng/.openclaw/completions/openclaw.fish"
