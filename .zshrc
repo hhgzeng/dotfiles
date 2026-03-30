@@ -9,9 +9,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# ===================================================================
-# ⚙️ Oh My Zsh (OMZ) 核心配置
-# ===================================================================
+# ⚙️ Oh My Zsh 核心配置
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -32,9 +30,7 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 # 加载 Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
-# ===================================================================
 # 🎨 主题配置 (Starship & P10k)
-# ===================================================================
 # Starship
 eval "$(starship init zsh)"
 
@@ -42,33 +38,12 @@ eval "$(starship init zsh)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# ===================================================================
 # 🌐 系统环境变量配置
-# ===================================================================
-# 默认编辑器
 export EDITOR=nvim
-
-# ===================================================================
-# 📦 包与版本管理器
-# ===================================================================
-
-# -------------------------------------------------------------------
-# Homebrew
-# -------------------------------------------------------------------
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-# -------------------------------------------------------------------
-# Node (nvm)
-# -------------------------------------------------------------------
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh" # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
-
-# -------------------------------------------------------------------
-# Conda
-# -------------------------------------------------------------------
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -84,19 +59,10 @@ fi
 unset __conda_setup
 # # <<< conda initialize <<<
 
-# ===================================================================
 # 🔧 实用工具 & 别名
-# ===================================================================
-
-# -------------------------------------------------------------------
-# 常用别名 (Aliases)
-# -------------------------------------------------------------------
-# 现代工具替代
 alias cat="bat"
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-alias cd='z' # zoxide 替代 cd
-
-# 快捷命令
+alias cd='z'
 alias ft='exiftool'
 alias ff='fastfetch'
 alias cls='clear'
