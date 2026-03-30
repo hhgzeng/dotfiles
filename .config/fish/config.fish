@@ -118,7 +118,8 @@ alias cat="bat"
 
 # 工具
 alias ff="fastfetch"
-alias ft="exiftool"
+
+direnv hook fish | source
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.

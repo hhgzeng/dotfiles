@@ -76,7 +76,7 @@ if [ $? -eq 0 ]; then
   eval "$__conda_setup"
 else
   if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-    . "/opt/anaconda3/etc/profile.d/conda.sh"
+    . "/opt/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
   else
     export PATH="/opt/anaconda3/bin:$PATH"
   fi
