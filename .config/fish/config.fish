@@ -43,7 +43,3 @@ source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
 # OpenClaw Completion
 source "/Users/jingzeng/.openclaw/completions/openclaw.fish"
-
-# bun
-# set --export BUN_INSTALL "$HOME/.bun"
-# set --export PATH $BUN_INSTALL/bin $PATH

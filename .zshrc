@@ -59,66 +59,16 @@ fi
 unset __conda_setup
 # # <<< conda initialize <<<
 
-# 🔧 实用工具 & 别名
+# ---------- 💡 别名 ----------
 alias cat="bat"
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias cd='z'
-alias ft='exiftool'
 alias ff='fastfetch'
 alias cls='clear'
 alias quit='exit'
 
-# -------------------------------------------------------------------
-# fzf (模糊查找) & fd (查找文件)
-# -------------------------------------------------------------------
-# 使用 fd 替代 fzf 的默认命令
-export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
-
-# fzf 预览配置
-show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
-export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
-export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
-
-# fzf 补全函数
-# Use fd (https://github.com/sharkdp/fd) for listing path candidates. 
-_fzf_compgen_path() { 
-  fd --hidden --exclude .git . "$1"
-}
-# Use fd to generate the list for directory completion
-_fzf_compgen_dir() {
-  fd --type=d --hidden --exclude .git . "$1"
-}
-
-# Advanced customization of fzf options via _fzf_comprun function
-_fzf_comprun() {
-  local command=$1
-  shift
-
-  case "$command" in
-    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
-    export|unset) fzf --preview "eval 'echo ${}'"         "$@" ;;
-    ssh)          fzf --preview 'dig {}'                   "$@" ;;
-    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;; 
-  esac 
-}
-
-# -------------------------------------------------------------------
-# 其他工具
-# -------------------------------------------------------------------
-# fzf-git (fzf 的 git 集成)
-source ~/fzf-git.sh/fzf-git.sh
-
-# ===================================================================
-# 🔌 第三方工具 & 初始化
-# ===================================================================
-
-# -------------------------------------------------------------------
-# 工具初始化 (必须放在较后位置)
-# -------------------------------------------------------------------
-# fzf: 命令行模糊查找工具
+# ---------- 🚀 Shell 工具初始化 ----------
 eval "$(fzf --zsh)"
-
-# zoxide: 现代化的 cd 命令替代品
 eval "$(zoxide init zsh)"
+
+# ---------- 其他 ----------
