@@ -14,6 +14,7 @@ window-decoration = auto
 
 # 主题
 theme = tokyonight
+# theme = Catppuccin Mocha
 
 # 光标设置
 cursor-style = block
@@ -28,7 +29,7 @@ shell-integration = none
 shell-integration-features = no-cursor
 
 # 自定义着色器
-custom-shader = ~/.config/ghostty/shaders/cursor_blaze.glsl
+custom-shader = ~/.config/ghostty/shaders/cursor_warp.glsl
 
 # 其他
 macos-titlebar-style = transparent
