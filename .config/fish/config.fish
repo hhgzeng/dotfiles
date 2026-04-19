@@ -43,3 +43,6 @@ source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
 # OpenClaw Completion
 source "/Users/jingzeng/.openclaw/completions/openclaw.fish"
+
+# Mole shell completion
+# set -l output (mole completion fish 2>/dev/null); and echo "$output" | source
